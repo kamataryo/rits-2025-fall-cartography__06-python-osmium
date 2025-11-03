@@ -1,0 +1,10 @@
+[project]
+name = "rits-2025-fall-cartography-06-python-osmium"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "osmium>=4.2.0",
+]
+
