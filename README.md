@@ -2,7 +2,7 @@
 
 このリポジトリは、データベース演習;コンピューターグラフィクス演習II で使用する教材です。Python と pyosmium ライブラリを使用して、OpenStreetMap（OSM）データの処理方法を学習します。
 
-## 📚 学習内容
+## 学習内容
 
 このチュートリアルでは、以下のスキルを習得します：
 
@@ -17,13 +17,13 @@
 - **Python**: 3.8 以上
 - **パッケージマネージャー**: [uv](https://github.com/astral-sh/uv)
 
-##  Codespace 環境でのセットアップ
+## Codespace 環境でのセットアップ
 
 ```shell
 $ pip install uv
 ```
 
-## 🚀 ローカル環境でのセットアップ手順
+## ローカル環境でのセットアップ
 
 ### 1. リポジトリのクローン
 
@@ -75,32 +75,11 @@ mkdir -p data
 $ curl -L https://download.geofabrik.de/asia/japan/shikoku-latest.osm.pbf -o data/shikoku.osm.pbf
 ```
 
-## 🗂️ プロジェクト構造（予定）
-
-```
-rits-2025-fall-cartography__06-python-osmium/
-├── .venv/              # 仮想環境（自動生成、git管理外）
-├── data/               # OSMデータファイル（.osm.pbf など）
-├── src/                # ソースコード
-│   ├── handlers/       # カスタムosmiumハンドラー
-│   ├── filters/        # データフィルタリング
-│   └── utils/          # ユーティリティ関数
-├── scripts/            # 実行用スクリプト
-├── examples/           # サンプルコード
-├── results/            # 出力結果（git管理外）
-├── tests/              # テストコード
-├── CLAUDE.md           # AI アシスタント向けガイド
-├── README.md           # このファイル
-└── requirements.txt    # 依存関係リスト
-```
-
 ## 🎓 チュートリアルの流れ
 
 ### Step 1: Python の基礎
-- 変数とデータ型
-- 制御構文（if文、for文）
-- 関数の定義と使用
-- ファイルの読み書き
+- クラス構文
+- オブジェクト指向プログラミング
 
 ### Step 2: OpenStreetMap データの理解
 - OSM データ構造の基礎
@@ -120,42 +99,6 @@ rits-2025-fall-cartography__06-python-osmium/
 - JSON / GeoJSON 形式での出力
 - CSV 形式での統計データ出力
 - 結果の可視化
-
-## 💡 サンプルコード
-
-### 基本的なハンドラーの例
-
-```python
-import osmium
-
-class CountHandler(osmium.SimpleHandler):
-    """OSMデータ内の地物をカウントするハンドラー"""
-
-    def __init__(self):
-        super().__init__()
-        self.nodes = 0
-        self.ways = 0
-        self.relations = 0
-
-    def node(self, n):
-        """ノード（点）を処理"""
-        self.nodes += 1
-
-    def way(self, w):
-        """ウェイ（線・面）を処理"""
-        self.ways += 1
-
-    def relation(self, r):
-        """リレーション（複雑な地物）を処理"""
-        self.relations += 1
-
-# 使用例
-handler = CountHandler()
-handler.apply_file("data/shikoku.osm.pbf")
-print(f"ノード数: {handler.nodes}")
-print(f"ウェイ数: {handler.ways}")
-print(f"リレーション数: {handler.relations}")
-```
 
 ## 🔍 トラブルシューティング
 
