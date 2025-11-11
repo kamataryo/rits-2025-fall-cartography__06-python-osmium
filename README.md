@@ -94,12 +94,6 @@ $ curl -L https://download.geofabrik.de/asia/japan/shikoku-latest.osm.pbf -o dat
 - タグのフィルタリング
 - 地理的範囲でのフィルタリング
 
-### Step 4: データの加工と出力
-- 抽出したデータの整形
-- JSON / GeoJSON 形式での出力
-- CSV 形式での統計データ出力
-- 結果の可視化
-
 ## 🔍 トラブルシューティング
 
 ### メモリ不足エラー
