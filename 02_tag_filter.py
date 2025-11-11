@@ -19,7 +19,7 @@ OSM_FILE = "data/shikoku.osm.pbf"
 
 def main():
     """メイン処理"""
-    # ハンドラーを作成
+    # ハンドラーをインスタンス化
     restaurantHandler = TagFilterHandler("amenity", "restaurant")
 
     # OSMファイルを処理
