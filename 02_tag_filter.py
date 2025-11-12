@@ -27,6 +27,7 @@ def main():
 
     # 結果を表示
     restaurantHandler.print_summary()
+    print(restaurantHandler.nodes[0])  # 最初のノードを表示
 
 if __name__ == "__main__":
     main()

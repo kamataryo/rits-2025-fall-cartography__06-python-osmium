@@ -100,4 +100,9 @@ class CountHandler(osmium.SimpleHandler):
                     'total': int
                 }
         """
-        raise NotImplementedError('このメソッドは未実装です')
+        return {
+            'nodes': self.nodes,
+            'ways': self.ways,
+            'relations': self.relations,
+            'total': self.nodes + self.ways + self.relations
+        }
